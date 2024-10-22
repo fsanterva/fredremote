@@ -16,7 +16,6 @@ require('packer').startup(
 		use { 'nvim-treesitter/nvim-treesitter', run = function() pcall(require('nvim-treesitter.install').update { with_sync = true }) end, }
 		use { 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter', }
 		use 'sainnhe/everforest'
-		-- use 'navarasu/onedark.nvim'
 		use 'ap/vim-css-color'
 		use 'Yggdroot/indentLine'
 		use {'neoclide/coc.nvim', branch = 'release'}
@@ -86,6 +85,10 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Indentation
+vim.o.tabstop = 4           -- Number of spaces that a <Tab> in the file counts for
+vim.o.shiftwidth = 4        -- Number of spaces to use for each step of (auto)indent
+
 -- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
@@ -93,7 +96,6 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 vim.o.termguicolors = true
 
--- vim.cmd [[colorscheme onedark]]
 vim.cmd [[colorscheme everforest]]
 
 vim.cmd("augroup ProjectDrawer")
@@ -124,7 +126,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    -- theme = 'onedark',
     theme = 'everforest',
     component_separators = '|',
     section_separators = '',
@@ -264,7 +265,6 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
-
   sumneko_lua = {
     Lua = {
       workspace = { checkThirdParty = true },
@@ -385,7 +385,7 @@ vim.api.nvim_set_keymap("n", "<S-Tab>", ":tabp<CR>", {noremap=true})
 vim.api.nvim_set_keymap("n", "<C-y>", ":vertical resize +20<CR>", {noremap=true})
 vim.api.nvim_set_keymap("n", "<C-t>", ":vertical resize -20<CR>", {noremap=true})
 
-vim.api.nvim_set_keymap("n", "<leader>rep", ":%s /xxxxxx/xxxxxx/g", {noremap=true})
+vim.api.nvim_set_keymap("n", "<leader>rep", ":%s /zzzzzzzzzzzzzzzz/zzzzzzzzzzzzzzzz/g", {noremap=true})
 
 vim.api.nvim_set_keymap("n", "<leader>ff", ":vimgrep /xxxxxxxx/gj **/*", {noremap=true})
 vim.api.nvim_set_keymap("n", "<leader>nf", ":cfdo %s/xxxxx/xxxxx/g", {noremap=true})
@@ -425,18 +425,11 @@ end
 -- ============== Settings ==============
 
 vim.g.netrw_banner = 1
-vim.g.netrw_altv = 1 
+vim.g.netrw_altv = 2 
 vim.g.netrw_liststyle = 0 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_winsize = 30 
 vim.g.netrw_sort_by = "exten"
-
--- netrw_browse_split:-
--- 0: Open files in the current window.
--- 1: Open files in a new horizontal split window at the top.
--- 2: Open files in a new vertical split window on the left.
--- 3: Open files in a new tab page.
--- 4: Open files in a new horizontal split window at the top (same as 1).
 
 vim.api.nvim_command("set clipboard=unnamed")
 vim.api.nvim_set_keymap("n", "<leader>v", ":r !xsel -ob<CR>", {noremap = true})
@@ -561,3 +554,13 @@ vim.cmd('autocmd BufEnter * silent! lcd %:p:h') -- Define autocmd for changing d
 -- Set 'jjj' to enter terminal mode
 
 -- See `:help vim.keymap.set()`
+
+vim.cmd[[
+  command! -nargs=* -complete=customlist,Fredcompletion Fred execute <q-args>
+  function! Fredcompletion(ArgLead, CmdLine, CursorPos)
+    return [':fred ', ':fredzzzz ', ':!ls', ':r!ls', ':vimgrep /xxxxxx/g **/*', ':find . -type -name "*.php"', ':find . -type -name "*.js"']
+  endfunction
+]]
+
+vim.cmd[[cnoreabbrev <expr> fred getcmdtype() == ':' && getcmdline() == 'fred' ? 'Fred ' : 'fred']]
+
