@@ -33,6 +33,8 @@ vim.api.nvim_set_keymap("n", "<leader>end", ":qall!<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>vim", ":e ~/.config/nvim/init.lua<CR>", {noremap=true})
 vim.api.nvim_set_keymap("n", "<leader>vit", "vit", {noremap = true})
 
+vim.api.nvim_set_keymap("n", "<leader>ntree", ":NERDTreeToggle<CR>", {noremap = true})
+
 vim.api.nvim_set_keymap("n", "<leader>pth", ":echo expand('%')<CR>", {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>yth', [[:let @+ = expand('%') | call system('echo "' . @+ . '" | xclip -i -selection clipboard')<CR>]], { noremap = true, silent = true })
 
