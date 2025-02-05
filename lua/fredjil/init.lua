@@ -1,6 +1,8 @@
 require("fredjil.ui")           -- UI-related settings (statusline, colorscheme)
-require("fredjil.options")      -- Neovim settings (e.g., line numbers, tabs, etc.)
+
 require("fredjil.keymaps")      -- Custom keybindings
+require("fredjil.options")      -- Neovim settings (e.g., line numbers, tabs, etc.)
+
 require("fredjil.plugins")      -- Plugin manager setup (packer.nvim)
 require("fredjil.lsp")          -- LSP-related configurations
 

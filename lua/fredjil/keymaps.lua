@@ -53,6 +53,9 @@ vim.api.nvim_set_keymap("n", "<leader>ff", ":vimgrep /xxxxxxxx/gj **/*", {norema
 vim.api.nvim_set_keymap("n", "<leader>nf", ":cfdo %s/xxxxx/xxxxx/g", {noremap=true})
 vim.api.nvim_set_keymap("n", "<leader>nfu", ":cfdo update", {noremap=true})
 
+
+vim.api.nvim_set_keymap("n", "<leader>ne", ":NERDTreeToggle<CR>", {noremap = true})
+
 vim.api.nvim_set_keymap("n", "<leader>w", ":lua Ww()<CR>", {noremap = true})
 function Ww()
   if vim.fn.has('nvim') then
