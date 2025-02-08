@@ -99,11 +99,6 @@ _G.packer_plugins = {
     path = "/home/cp24/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
-  everforest = {
-    loaded = true,
-    path = "/home/cp24/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/home/cp24/.local/share/nvim/site/pack/packer/start/fidget.nvim",
@@ -143,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cp24/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/home/cp24/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
