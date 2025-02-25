@@ -1,3 +1,4 @@
+
 vim.g.mapleader = ','        -- Set leader key to ','
 vim.g.maplocalleader = ','   -- Set local leader key to ','
 
@@ -59,7 +60,7 @@ vim.api.nvim_set_keymap("n", "<leader>ne", ":NERDTreeToggle<CR>", {noremap = tru
 vim.api.nvim_set_keymap("n", "<leader>w", ":lua Ww()<CR>", {noremap = true})
 function Ww()
   if vim.fn.has('nvim') then
-    vim.cmd("cd /mnt/c/wamp64/www/devs/dilate/wp")
+    vim.cmd("cd /mnt/c/wamp64/www/devs/")
     vim.cmd(":set modifiable")
     vim.cmd("e.")
   end

@@ -1,3 +1,4 @@
+
 vim.api.nvim_command("set splitright")
 
 vim.api.nvim_command("set clipboard=unnamed")

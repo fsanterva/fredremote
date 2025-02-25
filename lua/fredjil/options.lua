@@ -1,3 +1,4 @@
+
 vim.o.hlsearch = true        -- Highlight search matches
 vim.wo.number = true         -- Show line numbers
 vim.o.mouse = 'a'            -- Enable mouse support
@@ -19,6 +20,6 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_winsize = 30 
 vim.g.netrw_sort_by = "exten"
 
-vim.opt.autochdir = true -- Set autochdir 
+vim.o.autochdir = true -- Set autochdir 
 
-vim.api.nvim_set_option("wrap", false)
+vim.api.nvim_set_option("wrap", false) 

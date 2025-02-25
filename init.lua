@@ -48,7 +48,6 @@ require('packer').startup(function(use)
   -- use 'sainnhe/everforest'
   use 'shaunsingh/nord.nvim'
 
-  
   use 'ap/vim-css-color'
   use 'Yggdroot/indentLine'
   use { 'neoclide/coc.nvim', branch = 'release' }
