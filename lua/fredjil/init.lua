@@ -1,9 +1,22 @@
+-- Load core modules
+require("fredjil.options")
+require("fredjil.keymaps")
+require("fredjil.autocommands")
+require("fredjil.ui")
 
-require("fredjil.ui")           -- UI-related settings (statusline, colorscheme)
+-- Set up plugins
+require("fredjil.plugins")
 
-require("fredjil.keymaps")      -- Custom keybindings
-require("fredjil.options")      -- Neovim settings (e.g., line numbers, tabs, etc.)
-
-require("fredjil.plugins")      -- Plugin manager setup (packer.nvim)
-
-require("fredjil.autocommands") -- Autocommands configuration
+-- Load plugin configurations
+require('plugins.telescope')
+require('plugins.coc')
+require('plugins.treesitter')
+require("plugins.comment")
+require("plugins.fidget")
+require("plugins.gitsigns")
+require('plugins.lsp')
+require("plugins.lualine")
+require("plugins.neodev")
+require("plugins.nerdtree")
+require("plugins.closetag")
+require('plugins.mason')
